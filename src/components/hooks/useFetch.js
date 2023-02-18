@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
@@ -25,7 +25,9 @@ const useFetch = (url) => {
     return () => {};
   }, [url]);
 
-  return { data, isLoading, error };
+  const memoizedData = useMemo(() => data, [data]);
+
+  return { memoizedData, isLoading, error };
 };
 
 export default useFetch;

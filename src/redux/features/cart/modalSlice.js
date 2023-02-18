@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isOpen: false,
-  item: null
+  item: null,
 };
 
 export const modalSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    open: (state, {payload}) => {
+    open: (state, { payload }) => {
       state.isOpen = true;
       state.item = payload;
     },

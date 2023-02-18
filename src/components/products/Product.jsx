@@ -17,11 +17,11 @@ const Product = ({ product }) => {
       </Link>
       <div className="flex-1 px-5 pb-5 flex flex-col gap-6">
         <Link to={`/${id}`}>
-          <h5 className="truncate text-xl font-semibold tracking-tight">{title}</h5>
+          <h5 className="truncate text-gray-800 text-xl font-semibold tracking-tight">{title}</h5>
         </Link>
         <div className="">
           <div className="flex items-center justify-between">
-            <span className="text-2xl font-bold">${price}</span>
+            <span className="text-2xl font-bold text-gray-700">${price}</span>
             {isInCart() ? (
               <button
                 onClick={() => dispatch(remove(product))}
@@ -31,7 +31,7 @@ const Product = ({ product }) => {
             ) : (
               <button
                 onClick={() => dispatch(add({ ...product, quantity: 1 }))}
-                className="inline-flex justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium bg-purple-500 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2">
+                className="inline-flex justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium bg-purple-400 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2">
                 Add to cart
               </button>
             )}

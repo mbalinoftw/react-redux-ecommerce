@@ -34,15 +34,15 @@ const ModalRemove = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95">
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 text-center">
-                    Delete product
+                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-800 text-center">
+                    {item ? "Delete product" : "Clear cart"}
                   </Dialog.Title>
                   <div className="mt-2">
                     {/* 
                       If an item is selected prompt to delete that item
                       else prompt to clear all items
                     */}
-                    <p className="text-md text-gray-500 text-center">
+                    <p className="text-md text-gray-400 text-center">
                       Remove {item ? item.title : "all your items"} from your cart?
                     </p>
                   </div>
@@ -50,7 +50,7 @@ const ModalRemove = () => {
                   <div className="mt-4 flex items-center justify-between gap-4">
                     <button
                       type="button"
-                      className="inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
+                      className="inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
                       onClick={() => {
                         dispatch(close());
                       }}>
@@ -63,7 +63,7 @@ const ModalRemove = () => {
                     {item ? (
                       <button
                         type="button"
-                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-400 px-4 py-2 text-sm font-medium text-white hover:bg-red-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2"
                         onClick={() => {
                           dispatch(remove(item));
                           dispatch(close());
@@ -73,7 +73,7 @@ const ModalRemove = () => {
                     ) : (
                       <button
                         type="button"
-                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-400 px-4 py-2 text-sm font-medium text-white hover:bg-red-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2"
                         onClick={() => {
                           dispatch(clearCart());
                           dispatch(close());
