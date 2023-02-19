@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { calcQuantityAndTotal } from "./redux/features/cart/cartSlice";
 import Navbar from "./components/navbar/Navbar";
-import ProductsList from "./components/products/ProductsList";
-import ProductDetails from "./components/products/ProductDetails";
 import CartContainer from "./components/cart/CartContainer";
+import ProductsContainer from './components/products/ProductsContainer';
+import ProductDetailsContainer from './components/products/ProductDetailsContainer';
 import Footer from "./components/footer/Footer";
 
 const App = () => {
@@ -21,8 +21,8 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ProductsList />} />
-          <Route path="/:productId" element={<ProductDetails />} />
+          <Route path="/" element={<ProductsContainer />} />
+          <Route path="/:productId" element={<ProductDetailsContainer />} />
           <Route path="/cart" element={<CartContainer />} />
         </Routes>
         <Footer />

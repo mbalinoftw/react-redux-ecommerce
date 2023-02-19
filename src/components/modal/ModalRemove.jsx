@@ -1,5 +1,5 @@
-import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, remove } from "../../redux/features/cart/cartSlice";
 import { close } from "../../redux/features/cart/modalSlice";
