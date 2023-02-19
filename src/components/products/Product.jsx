@@ -8,10 +8,12 @@ const Product = ({ product }) => {
   const { items } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
-  const isInCart = () => items.some((item) => item.id === product.id);
+  const isInCart = () => items.some((item) => item.id === id);
 
   return (
-    <div className="w-full max-w-sm flex flex-col rounded-lg bg-gray-100 hover:shadow-md transition-all duration-300 cursor-pointer">
+    <div
+      key={id}
+      className="w-full max-w-sm flex flex-col rounded-lg bg-gray-100 hover:shadow-md transition-all duration-300 cursor-pointer">
       <Link to={`/${id}`}>
         <img className="p-8 w-64 h-64 mx-auto mix-blend-multiply" src={image} alt={description} />
       </Link>
