@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
 
 const initialState = {
   items: [],
@@ -12,10 +13,12 @@ export const cartSlice = createSlice({
   reducers: {
     add: (state, { payload }) => {
       state.items = [...state.items, payload];
+      toast.success(`Added ${payload.title} to your cart`);
     },
     remove: (state, { payload }) => {
       const filteredItems = state.items.filter((item) => item.id !== payload.id);
       state.items = filteredItems;
+      toast.error(`Removed ${payload.title} from your cart`);
     },
     increment: (state, { payload }) => {
       const item = state.items.find((item) => item.id === payload.id);

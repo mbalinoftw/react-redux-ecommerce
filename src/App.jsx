@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { calcQuantityAndTotal } from "./redux/features/cart/cartSlice";
+
 import Navbar from "./components/navbar/Navbar";
 import CartContainer from "./components/cart/CartContainer";
-import ProductsContainer from './components/products/ProductsContainer';
-import ProductDetailsContainer from './components/products/ProductDetailsContainer';
+import ProductsContainer from "./components/products/ProductsContainer";
+import ProductDetailsContainer from "./components/products/ProductDetailsContainer";
 import Footer from "./components/footer/Footer";
 
 const App = () => {
