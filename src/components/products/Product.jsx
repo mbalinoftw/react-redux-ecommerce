@@ -11,14 +11,12 @@ const Product = ({ product }) => {
   const isInCart = () => items.some((item) => item.id === id);
 
   return (
-    <div
-      key={id}
-      className="w-full max-w-sm flex flex-col rounded-lg bg-gray-100 hover:shadow-md transition-all duration-300 cursor-pointer">
-      <Link to={`/${id}`}>
+    <article className="w-full max-w-sm flex flex-col rounded-lg bg-gray-100 hover:shadow-md transition-all duration-300 cursor-pointer">
+      <Link to={`/products/${id}`}>
         <img className="p-8 w-64 h-64 mx-auto mix-blend-multiply" src={image} alt={description} />
       </Link>
       <div className="flex-1 px-5 pb-5 flex flex-col gap-6">
-        <Link to={`/${id}`}>
+        <Link to={`/products/${id}`}>
           <h5 className="truncate text-gray-800 text-xl font-semibold tracking-tight">{title}</h5>
         </Link>
         <div className="">
@@ -40,7 +38,7 @@ const Product = ({ product }) => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

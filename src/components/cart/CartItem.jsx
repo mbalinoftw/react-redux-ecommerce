@@ -12,7 +12,7 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="p-4 flex items-center gap-4 rounded-lg border border-gray-200">
+    <article className="p-4 flex items-center gap-4 rounded-lg border border-gray-200">
       <Link to={`/${id}`}>
         <img src={image} alt={title} className="p-1 md:p-4 w-16 h-16 md:w-32 md:h-32 mix-blend-multiply" />
       </Link>
@@ -36,7 +36,7 @@ const CartItem = ({ item }) => {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
