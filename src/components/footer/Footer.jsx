@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="mt-auto flex items-center justify-center">
       <span className="">
-        developed by{" "}
+        developed by
         <Link to="https://github.com/mbalinoftw" target="_blank">
           mbalinoftw
-        </Link>{" "}
+        </Link>
         😎
       </span>
     </footer>
